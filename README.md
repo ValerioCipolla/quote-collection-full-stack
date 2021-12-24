@@ -1,5 +1,5 @@
 # quote-generator-full-stack
-A full-stack random quote generator made using JS, Node.js and PostegreSQL
+A full-stack quote generator made using JS, Node.js and PostegreSQL
 
 ## School of Code Christmas Project
 As a project through the christmas break I decided to create a simple application to work on all the skill we have learned so far (6 weeks into the bootcamp).
