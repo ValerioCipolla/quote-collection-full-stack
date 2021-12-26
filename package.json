@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node ./bin/www.js",
     "dev": "nodemon -r dotenv/config ./bin/www.js",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --setupFiles dotenv/config",
     "db-create": "node -r dotenv/config ./db/scripts/create-table.js",
     "db-drop": "node -r dotenv/config ./db/scripts/drop-table.js",
     "db-seed": "node -r dotenv/config ./db/scripts/seed-table.js",
@@ -20,7 +21,10 @@
     "pg": "^8.7.1"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "dotenv": "^10.0.0",
-    "nodemon": "^2.0.15"
+    "jest": "^27.4.5",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.1.6"
   }
 }
