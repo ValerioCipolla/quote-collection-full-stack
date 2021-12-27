@@ -36,3 +36,6 @@ I set up my project using express-generator-esmodules, created a PostgreSQL data
 ### Day 2
 
 I started working on the server of my api and I also set up a few tests to make it easy for me to check that my requests are always being handled correctly and I am not breaking my own code as the handlers become more complex. At the moment, I am handling requests to get all quotes, to create a new quote and to delete a quote by ID. I started working on the front-end as well, creating the basic functionality, so far, I am displaying the first quote in the database and I have added a button for the user to click and display the next quote, when the end of the array of quotes is reached, the first one is displayed again.
+
+### Day 3 
+Today I finished my CRUD API by adding the update functionality, and I also fixed the problem I was getting with the tests (Jest kept giving me a yellow warning because some async operation wasn't handled correctly during testing), and added a test for the post functionality of my API.
