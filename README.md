@@ -1,6 +1,6 @@
 # quote-collection-full-stack
 
-A full-stack quote collection application made using JS, Node.js and PostegreSQL
+A full-stack quote collection application made using JavaScript, HTML and CSS for the front-end. Node.js and PostegreSQL for the back-end.
 
 ## School of Code Christmas Project
 
