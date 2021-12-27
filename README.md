@@ -1,6 +1,6 @@
-# quote-generator-full-stack
+# quote-collection-full-stack
 
-A full-stack quote generator made using JS, Node.js and PostegreSQL
+A full-stack quote collection application made using JS, Node.js and PostegreSQL
 
 ## School of Code Christmas Project
 
