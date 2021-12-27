@@ -11,6 +11,7 @@
 }
 
 :root {
+  --background-color: #ffffff;
   --quote-color: #000000;
   --author-color: #101010;
   --inactive-button: #303030;
@@ -22,6 +23,7 @@
 }
 
 body {
+  background-color: var(--background-color);
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -61,6 +63,10 @@ nav ul button:hover {
   color: var(--active-button);
   text-decoration: underline;
   cursor: pointer;
+}
+
+nav h3 {
+  color: var(--quote-color);
 }
 
 #home {
