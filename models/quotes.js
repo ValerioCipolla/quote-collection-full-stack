@@ -19,3 +19,11 @@ export async function deleteQuoteById(id) {
   ]);
   return data.rows;
 }
+
+export async function updateQuoteById(quote, id) {
+  const data = await query(
+    `UPDATE quotes SET quote = $1, author = $2 WHERE id = $3 RETURNING *`,
+    [quote.quote, quote.author, id]
+  );
+  return data.rows;
+}

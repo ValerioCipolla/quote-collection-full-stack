@@ -3,6 +3,7 @@ import {
   getAllQuotes,
   createQuote,
   deleteQuoteById,
+  updateQuoteById,
 } from "../models/quotes.js";
 const router = express.Router();
 
@@ -45,6 +46,24 @@ router.delete("/quotes/:id", async function (req, res) {
   res.json({
     success: true,
     message: `quote with id ${id} has been deleted`,
+    payload: result,
+  });
+});
+
+router.put("/quotes/:id", async function (req, res) {
+  const id = req.params.id;
+  const quote = req.body;
+  const result = await updateQuoteById(quote, id);
+  if (result.length <= 0) {
+    res.json({
+      success: false,
+      message: `quote with id ${id} was not found`,
+    });
+    return;
+  }
+  res.json({
+    success: true,
+    message: `quote with id ${id} has been updated`,
     payload: result,
   });
 });
