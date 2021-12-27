@@ -42,7 +42,7 @@ nav {
 
 nav:hover {
   opacity: 100%;
-  border-bottom: 2px solid gray;
+  border-bottom: 2px solid var(--inactive-button);
 }
 
 nav ul {
@@ -84,6 +84,7 @@ nav h3 {
   color: var(--author-color);
   font-weight: 300;
   font-size: 1.2rem;
+  margin-top: 2rem;
 }
 
 #btn-wrapper {
