@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+}
+
+:root {
+  --quote-color: #000000;
+  --author-color: #202020;
+  --active-button: #4f345a;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#home {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 2rem;
+}
+
+#quote {
+  color: var(--quote-color);
+}
+
+#author {
+  color: var(--author-color);
+  font-weight: 300;
+}
+
+#btn-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#btn-wrapper button {
+  border: none;
+  background-color: none;
+  color: pointer;
+}
+
+#btn-wrapper button:hover {
+  color: var(--active-button);
+  text-decoration: underline;
+  cursor: pointer;
+}
