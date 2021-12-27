@@ -16,8 +16,8 @@ async function getQuote() {
     currentQuote = arrayOfQuotes[index];
   }
   // assign current quotes to html elements
-  quote.innerText = currentQuote.quote;
-  author.innerText = `-${currentQuote.author}`;
+  quote.innerText = `"${currentQuote.quote}"`;
+  author.innerText = `- ${currentQuote.author}`;
 }
 
 async function nextQuoteButtonClickHandler() {

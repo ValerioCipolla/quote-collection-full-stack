@@ -12,8 +12,13 @@
 
 :root {
   --quote-color: #000000;
-  --author-color: #202020;
+  --author-color: #101010;
+  --inactive-button: #303030;
   --active-button: #4f345a;
+}
+
+.secondary-color {
+  color: var(--active-button);
 }
 
 body {
@@ -21,6 +26,41 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+nav {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  width: 100%;
+  padding: 0 1rem;
+  opacity: 50%;
+}
+
+nav:hover {
+  opacity: 100%;
+  border-bottom: 2px solid gray;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-end;
+}
+
+nav ul button {
+  border: none;
+  background: none;
+  color: var(--inactive-button);
+  font-size: 1rem;
+}
+
+nav ul button:hover {
+  color: var(--active-button);
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 #home {
@@ -37,6 +77,7 @@ body {
 #author {
   color: var(--author-color);
   font-weight: 300;
+  font-size: 1.2rem;
 }
 
 #btn-wrapper {
@@ -45,9 +86,11 @@ body {
 }
 
 #btn-wrapper button {
+  margin-top: 4rem;
   border: none;
-  background-color: none;
-  color: pointer;
+  background: none;
+  color: var(--inactive-button);
+  font-size: 1rem;
 }
 
 #btn-wrapper button:hover {
