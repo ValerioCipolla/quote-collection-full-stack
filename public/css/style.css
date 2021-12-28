@@ -16,6 +16,7 @@
   --author-color: #101010;
   --inactive-button: #303030;
   --active-button: #4f345a;
+  --modal-btn-background: #dcdcdc;
 }
 
 .secondary-color {
@@ -119,7 +120,7 @@ nav h3 {
   z-index: 1;
   height: 100vh;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .modal {
@@ -135,4 +136,53 @@ nav h3 {
 .modal-header {
   background-color: var(--active-button);
   color: var(--background-color);
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2rem;
+}
+
+.modal-header h5 {
+  font-size: 0.8rem;
+}
+
+#close-modal-btn:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.modal p {
+  padding: 1rem;
+  color: var(--quote-color);
+}
+
+.modal-quote {
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.modal-author {
+  font-size: 0.8rem;
+}
+
+.modal-btn-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 1rem;
+}
+
+.modal-btn-wrapper button {
+  font-size: 0.8rem;
+  padding: 0.3rem;
+}
+
+#modal-action-send-body * {
+  font-size: 0.7rem;
+  padding: 0.3rem;
+  margin: 0.3rem auto;
+  display: block;
+  width: 80%;
+}
+
+#modal-action-send-body label {
+  color: var(--quote-color);
 }

@@ -28,9 +28,30 @@
     </div>
     <div class="background-modal hidden">
       <div class="modal">
-        <h5 class="modal-header">myQuotes</h5>
-        <p class="modal-quote"></p>
-        <p class="modal-author"></p>
+        <header class="modal-header">
+          <h5>myQuotes</h5>
+          <h5 id="close-modal-btn">Close</h5>
+        </header>
+        <div id="modal-body">
+          <p class="modal-quote"></p>
+          <p class="modal-author"></p>
+          <div class="modal-btn-wrapper">
+            <button id="modal-delete-quote-btn">Delete</button>
+            <button id="modal-update-quote-btn">Update</button>
+            <button id="modal-send-quote-btn">Send</button>
+          </div>
+        </div>
+        <div id="modal-action-delete-body" class="hidden"></div>
+        <div id="modal-action-update-body" class="hidden"></div>
+        <div id="modal-action-send-body" class="hidden">
+          <label>Enter the email address you want to send the quote to:</label>
+          <input
+            id="user-email-address"
+            type="email"
+            placeholder="example@gmail.com"
+          />
+          <button id="send-email-action">Send e-mail</button>
+        </div>
       </div>
     </div>
   </body>

@@ -1,5 +1,5 @@
 import switchMode from "./scripts/switchMode.js";
-import { showModal } from "./scripts/modal.js";
+import { showModal } from "./scripts/moreOptionsModal.js";
 
 export const URL = "http://localhost:3000";
 export const quoteSection = document.querySelector("#quote-section");
