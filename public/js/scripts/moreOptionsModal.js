@@ -1,5 +1,7 @@
 import { quoteSection } from "../main.js";
 import { getQuoteById } from "./getQuoteById.js";
+// import { sendEmail } from "../../../mailer.js";
+
 const backgrounModal = document.querySelector(".background-modal");
 const modal = document.querySelector(".modal");
 const modalBody = document.querySelector("#modal-body");
@@ -44,11 +46,12 @@ function modalClick(event) {
 function showSendQuoteModal() {
   modalBody.classList.add("hidden");
   modalActionSendBody.classList.remove("hidden");
-  sendActionBtn.addEventListener("click", sendEmail);
+  sendActionBtn.addEventListener("click", sendClickButtonHandler);
 }
 
-function sendEmail() {
+function sendClickButtonHandler() {
   modalActionSendBody.classList.add("hidden");
+  // sendEmail("valerio_cipolla@hotmail.it", "ciao");
   modalCompletedActionSendBody.classList.remove("hidden");
   closeModalCompletedActionSendBtn.addEventListener("click", closeModal);
 }
