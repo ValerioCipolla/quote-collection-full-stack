@@ -1,6 +1,7 @@
 import express from "express";
 import {
   getAllQuotes,
+  getQuoteById,
   createQuote,
   deleteQuoteById,
   updateQuoteById,
@@ -19,6 +20,23 @@ router.get("/quotes", async function (req, res) {
   res.json({
     success: true,
     message: `All quotes found :)`,
+    payload: result,
+  });
+});
+
+router.get("/quotes/:id", async function (req, res) {
+  const id = req.params.id;
+  const result = await getQuoteById(id);
+  if (result.length <= 0) {
+    res.json({
+      success: false,
+      message: `quote with id ${id} was not found`,
+    });
+    return;
+  }
+  res.json({
+    success: true,
+    message: `quote with id ${id} found :)`,
     payload: result,
   });
 });

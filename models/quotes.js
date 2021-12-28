@@ -5,6 +5,11 @@ export async function getAllQuotes() {
   return data.rows;
 }
 
+export async function getQuoteById(id) {
+  const data = await query(`SELECT * FROM quotes WHERE id = $1;`, [id]);
+  return data.rows;
+}
+
 export async function createQuote(quote) {
   const data = await query(
     `INSERT INTO quotes (quote, author) VALUES ($1, $2) RETURNING *;`,

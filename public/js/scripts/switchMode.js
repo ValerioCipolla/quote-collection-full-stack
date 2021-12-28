@@ -1,5 +1,6 @@
-// switch between dark and light mode
+import { switchModeButton } from "../main.js";
 
+// switch between dark and light mode
 let darkMode = false;
 
 export default function switchMode() {
@@ -10,6 +11,7 @@ export default function switchMode() {
     document.documentElement.style.setProperty("--inactive-button", "#dcdcdc");
     document.documentElement.style.setProperty("--active-button", "#FF5733");
     darkMode = true;
+    switchModeButton.innerText = `Dark Mode: ON`;
   } else {
     document.documentElement.style.setProperty("--background-color", "#ffffff");
     document.documentElement.style.setProperty("--quote-color", "#000000");
@@ -17,5 +19,6 @@ export default function switchMode() {
     document.documentElement.style.setProperty("--inactive-button", "#303030");
     document.documentElement.style.setProperty("--active-button", "#4f345a");
     darkMode = false;
+    switchModeButton.innerText = `Dark Mode: OFF`;
   }
 }
