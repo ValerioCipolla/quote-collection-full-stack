@@ -175,6 +175,8 @@ nav h3 {
   padding: 0.3rem;
 }
 
+/* MODAL 2 SEND-ACTION */
+
 #modal-action-send-body * {
   font-size: 0.7rem;
   padding: 0.3rem;
@@ -194,6 +196,28 @@ nav h3 {
 }
 
 #modal-completed-action-send button {
+  padding: 0.3rem;
+  display: block;
+  margin: 1rem auto;
+  font-size: 0.7rem;
+}
+
+/* MODAL 2 UPDATE ACTION */
+
+#modal-action-update-body label,
+input,
+textarea {
+  font-size: 0.7rem;
+  padding: 0.3rem;
+  display: block;
+  margin: 0.5rem;
+}
+
+#modal-action-update-body label {
+  color: var(--quote-color);
+}
+
+#modal-action-update-body button {
   padding: 0.3rem;
   display: block;
   margin: 1rem auto;

@@ -1,24 +1,24 @@
 import { quoteSection } from "../main.js";
 import { getQuoteById } from "./getQuoteById.js";
-// import { sendEmail } from "../../../mailer.js";
+import {
+  showSendQuoteModal,
+  emailInputField,
+  hideSendQuoteModal,
+} from "./modals/sendQuoteModal.js";
+import {
+  showUpdateQuoteModal,
+  hideUpdateQuoteModal,
+} from "./modals/updateQuoteModal.js";
 
 const backgrounModal = document.querySelector(".background-modal");
 const modal = document.querySelector(".modal");
-const modalBody = document.querySelector("#modal-body");
+export const modalBody = document.querySelector("#modal-body");
 const modalQuote = document.querySelector(".modal-quote");
 const modalAuthor = document.querySelector(".modal-author");
 const closeModalBtn = document.querySelector("#close-modal-btn");
 const deleteQuoteModalBtn = document.querySelector("#modal-delete-quote-btn");
 const updateQuoteModalBtn = document.querySelector("#modal-update-quote-btn");
 const sendQuoteModalBtn = document.querySelector("#modal-send-quote-btn");
-const modalActionSendBody = document.querySelector("#modal-action-send-body");
-const sendActionBtn = document.querySelector("#send-email-action");
-const modalCompletedActionSendBody = document.querySelector(
-  "#modal-completed-action-send"
-);
-const closeModalCompletedActionSendBtn = document.querySelector(
-  "#close-modal-completed-action-send"
-);
 
 export async function showModal() {
   backgrounModal.classList.remove("hidden");
@@ -29,29 +29,22 @@ export async function showModal() {
   closeModalBtn.addEventListener("click", closeModal);
   backgrounModal.addEventListener("click", closeModal);
   modal.addEventListener("click", modalClick);
+  updateQuoteModalBtn.addEventListener("click", showUpdateQuoteModal);
   sendQuoteModalBtn.addEventListener("click", showSendQuoteModal);
 }
 
 export function closeModal() {
   backgrounModal.classList.add("hidden");
   modalBody.classList.remove("hidden");
-  modalActionSendBody.classList.add("hidden");
-  modalCompletedActionSendBody.classList.add("hidden");
+  hideUpdateQuoteModal();
+  hideSendQuoteModal();
+  resetInputFields();
 }
 
 function modalClick(event) {
   event.stopPropagation();
 }
 
-function showSendQuoteModal() {
-  modalBody.classList.add("hidden");
-  modalActionSendBody.classList.remove("hidden");
-  sendActionBtn.addEventListener("click", sendClickButtonHandler);
-}
-
-function sendClickButtonHandler() {
-  modalActionSendBody.classList.add("hidden");
-  // sendEmail("valerio_cipolla@hotmail.it", "ciao");
-  modalCompletedActionSendBody.classList.remove("hidden");
-  closeModalCompletedActionSendBtn.addEventListener("click", closeModal);
+function resetInputFields() {
+  emailInputField.value = "";
 }
