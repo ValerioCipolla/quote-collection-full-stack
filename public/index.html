@@ -41,13 +41,35 @@
             <button id="modal-send-quote-btn">Send</button>
           </div>
         </div>
-        <div id="modal-action-delete-body" class="hidden"></div>
+        <div id="modal-action-delete-body" class="hidden">
+          <h6>
+            Are you sure you want to delete this quote? It cannot be undone.
+          </h6>
+          <button id="delete-quote-action">Delete</button>
+        </div>
+        <div id="modal-completed-action-delete" class="hidden">
+          <h6 class="completed-action-body">Quote deleted.</h6>
+          <button
+            id="close-modal-completed-action-delete"
+            class="modal-completed-action-button"
+          >
+            OK
+          </button>
+        </div>
         <div id="modal-action-update-body" class="hidden">
           <label for="updated-quote"
-            >Quote: <textarea id="updated-quote"></textarea>
+            >Quote:
+            <textarea
+              id="updated-quote"
+              placeholder="Insert quote here"
+            ></textarea>
           </label>
           <label for="updated-author"
-            >Author: <input id="updated-author" type="text"
+            >Author:
+            <input
+              id="updated-author"
+              type="text"
+              placeholder="insert author here"
           /></label>
           <button id="update-quote-action">Update</button>
         </div>

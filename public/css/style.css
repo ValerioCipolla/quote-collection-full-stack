@@ -223,3 +223,20 @@ textarea {
   margin: 1rem auto;
   font-size: 0.7rem;
 }
+
+/* MODAL 2 DELETE ACTION*/
+
+#modal-action-delete-body h6 {
+  font-size: 0.7rem;
+  padding: 0.3rem;
+  display: block;
+  margin: 0.5rem;
+  color: var(--quote-color);
+}
+
+#modal-action-delete-body button {
+  padding: 0.3rem;
+  display: block;
+  margin: 1rem auto;
+  font-size: 0.7rem;
+}

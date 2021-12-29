@@ -11,6 +11,10 @@ import {
   updateAuthorInputField,
   updateQuoteInputField,
 } from "./modals/updateQuoteModal.js";
+import {
+  showDeleteQuoteModal,
+  hideDeleteQuoteModal,
+} from "./modals/deleteQuoteModal.js";
 
 const backgrounModal = document.querySelector(".background-modal");
 const modal = document.querySelector(".modal");
@@ -31,6 +35,7 @@ export async function showModal() {
   closeModalBtn.addEventListener("click", closeModal);
   backgrounModal.addEventListener("click", closeModal);
   modal.addEventListener("click", modalClick);
+  deleteQuoteModalBtn.addEventListener("click", showDeleteQuoteModal);
   updateQuoteModalBtn.addEventListener("click", showUpdateQuoteModal);
   sendQuoteModalBtn.addEventListener("click", showSendQuoteModal);
 }
@@ -38,6 +43,7 @@ export async function showModal() {
 export function closeModal() {
   backgrounModal.classList.add("hidden");
   modalBody.classList.remove("hidden");
+  hideDeleteQuoteModal();
   hideUpdateQuoteModal();
   hideSendQuoteModal();
   resetInputFields();
