@@ -189,13 +189,13 @@ nav h3 {
   color: var(--quote-color);
 }
 
-#modal-completed-action-send h6 {
+.completed-action-body {
   font-size: 0.8rem;
   padding: 2rem;
   color: var(--quote-color);
 }
 
-#modal-completed-action-send button {
+.modal-completed-action-button {
   padding: 0.3rem;
   display: block;
   margin: 1rem auto;

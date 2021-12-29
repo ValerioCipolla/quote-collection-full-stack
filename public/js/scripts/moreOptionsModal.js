@@ -8,6 +8,8 @@ import {
 import {
   showUpdateQuoteModal,
   hideUpdateQuoteModal,
+  updateAuthorInputField,
+  updateQuoteInputField,
 } from "./modals/updateQuoteModal.js";
 
 const backgrounModal = document.querySelector(".background-modal");
@@ -47,4 +49,6 @@ function modalClick(event) {
 
 function resetInputFields() {
   emailInputField.value = "";
+  updateQuoteInputField.value = "";
+  updateAuthorInputField.value = "";
 }
