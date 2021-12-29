@@ -11,7 +11,7 @@ export const moreOptionBtn = document.querySelector("#more-options-btn");
 let index = 0;
 
 // get next quote
-async function getQuote() {
+export async function getQuote() {
   const response = await fetch(`${URL}/api/quotes/`);
   const data = await response.json();
   const arrayOfQuotes = await data.payload;

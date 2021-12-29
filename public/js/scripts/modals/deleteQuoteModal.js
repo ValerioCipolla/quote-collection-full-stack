@@ -1,5 +1,5 @@
 import { modalBody, closeModal } from "../moreOptionsModal.js";
-import { quoteSection, URL } from "../../main.js";
+import { quoteSection, URL, getQuote } from "../../main.js";
 
 const modalActionDeleteBody = document.querySelector(
   "#modal-action-delete-body"
@@ -36,4 +36,5 @@ async function deleteButtonClickHandler() {
   modalActionDeleteBody.classList.add("hidden");
   modalCompletedActionDeleteBody.classList.remove("hidden");
   closeModalCompletedActionDelete.addEventListener("click", closeModal);
+  await getQuote();
 }

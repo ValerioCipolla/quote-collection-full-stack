@@ -1,5 +1,5 @@
 import { closeModal, modalBody } from "../moreOptionsModal.js";
-import { quoteSection, URL } from "../../main.js";
+import { quoteSection, URL, getQuote } from "../../main.js";
 
 const modalActionUpdateBody = document.querySelector(
   "#modal-action-update-body"
@@ -41,4 +41,5 @@ async function updateButtonClickHandler() {
   modalActionUpdateBody.classList.add("hidden");
   modalCompletedActionUpdateBody.classList.remove("hidden");
   closeModalCompletedActionUpdate.addEventListener("click", closeModal);
+  await getQuote();
 }
