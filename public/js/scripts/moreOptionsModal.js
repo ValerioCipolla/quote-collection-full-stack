@@ -27,7 +27,6 @@ const updateQuoteModalBtn = document.querySelector("#modal-update-quote-btn");
 const sendQuoteModalBtn = document.querySelector("#modal-send-quote-btn");
 
 export async function showModal() {
-  backgrounModal.classList.remove("hidden");
   let quoteId = quoteSection.dataset.id;
   const currentQuote = await getQuoteById(quoteId);
   modalQuote.innerText = `"${currentQuote[0].quote}"`;
@@ -38,6 +37,7 @@ export async function showModal() {
   deleteQuoteModalBtn.addEventListener("click", showDeleteQuoteModal);
   updateQuoteModalBtn.addEventListener("click", showUpdateQuoteModal);
   sendQuoteModalBtn.addEventListener("click", showSendQuoteModal);
+  backgrounModal.classList.remove("hidden");
 }
 
 export function closeModal() {
