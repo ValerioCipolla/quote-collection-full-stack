@@ -248,7 +248,24 @@ textarea {
 
 /* MODAL ADD ACTION*/
 
-#modal-action-add-body h6,
-label {
+#modal-action-add-body label {
   color: var(--quote-color);
+  font-size: 0.7rem;
+  padding: 0.3rem;
+  display: block;
+  margin: 0.5rem;
+}
+
+#modal-action-add-body h6 {
+  color: var(--quote-color);
+  font-size: 1rem;
+  padding: 0.3rem;
+  display: block;
+  margin: 0.5rem;
+}
+#modal-action-add-body button {
+  padding: 0.3rem;
+  display: block;
+  margin: 1rem auto;
+  font-size: 0.7rem;
 }
