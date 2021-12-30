@@ -1,5 +1,6 @@
 import { backgrounModal } from "../moreOptionsModal.js";
 import { URL } from "../../main.js";
+import { modalCompletedActionSendBody } from "./sendQuoteModal.js";
 
 export const addQuoteModal = document.querySelector("#add-quote-modal");
 const modalActionAddBody = document.querySelector("#modal-action-add-body");
@@ -9,6 +10,12 @@ const closeAddQuoteModalBtn = document.querySelector(
 const createQuoteInputField = document.querySelector("#created-quote");
 const createAuthorInputField = document.querySelector("#created-author");
 const addActionBtn = document.querySelector("#add-quote-action");
+const modalCompletedActionAddBody = document.querySelector(
+  "#modal-completed-action-add"
+);
+const closeModalCompletedActionAdd = document.querySelector(
+  "#close-modal-completed-action-add"
+);
 
 export function showAddQuoteModal() {
   backgrounModal.classList.remove("hidden");
@@ -24,6 +31,7 @@ export function closeAddQuoteModal() {
   backgrounModal.classList.add("hidden");
   addQuoteModal.classList.add("hidden");
   modalActionAddBody.classList.add("hidden");
+  modalCompletedActionAddBody.classList.add("hidden");
   resetInputFields();
 }
 
@@ -47,4 +55,7 @@ async function addQuoteClickHandler() {
   const response = await fetch(`${URL}/api/quotes/`, requestOptions);
   const data = await response.json();
   resetInputFields();
+  modalActionAddBody.classList.add("hidden");
+  modalCompletedActionAddBody.classList.remove("hidden");
+  closeModalCompletedActionAdd.addEventListener("click", closeAddQuoteModal);
 }
