@@ -1,6 +1,5 @@
 import { backgrounModal } from "../moreOptionsModal.js";
 import { URL } from "../../main.js";
-import { modalCompletedActionSendBody } from "./sendQuoteModal.js";
 
 export const addQuoteModal = document.querySelector("#add-quote-modal");
 const modalActionAddBody = document.querySelector("#modal-action-add-body");
