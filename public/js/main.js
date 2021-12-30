@@ -1,5 +1,6 @@
 import switchMode from "./scripts/switchMode.js";
 import { showModal } from "./scripts/moreOptionsModal.js";
+import { showAddQuoteModal } from "./scripts/modals/addQuoteModal.js";
 
 export const URL = "http://localhost:3000";
 export const quoteSection = document.querySelector("#quote-section");
@@ -8,6 +9,8 @@ export const author = document.querySelector("#author");
 export const nextQuoteButton = document.querySelector("#next-quote-btn");
 export const switchModeButton = document.querySelector("#switch-mode-btn");
 export const moreOptionBtn = document.querySelector("#more-options-btn");
+export const addQuoteBtn = document.querySelector("#add-quote-btn");
+
 let index = 0;
 
 // get next quote
@@ -34,6 +37,7 @@ async function nextQuoteButtonClickHandler() {
 }
 
 nextQuoteButton.addEventListener("click", nextQuoteButtonClickHandler);
+addQuoteBtn.addEventListener("click", showAddQuoteModal);
 switchModeButton.addEventListener("click", switchMode);
 moreOptionBtn.addEventListener("click", showModal);
 

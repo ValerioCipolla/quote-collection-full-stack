@@ -12,7 +12,7 @@
     <nav>
       <h3>my<span class="secondary-color">Quotes</span></h3>
       <ul>
-        <li><button id="create-quote-btn">Add quote</button></li>
+        <li><button id="add-quote-btn">Add quote</button></li>
         <li><button id="switch-mode-btn">Dark Mode: OFF</button></li>
       </ul>
     </nav>
@@ -27,7 +27,31 @@
       </div>
     </div>
     <div class="background-modal hidden">
-      <div class="modal">
+      <div id="add-quote-modal" class="modal hidden">
+        <header class="modal-header">
+          <h5>myQuotes</h5>
+          <h5 id="close-add-quote-modal-btn">X</h5>
+        </header>
+        <div id="modal-action-add-body">
+          <h6>Create a new quote:</h6>
+          <label for="created-quote"
+            >Quote:
+            <textarea
+              id="created-quote"
+              placeholder="Insert quote here"
+            ></textarea>
+          </label>
+          <label for="created-author"
+            >Author:
+            <input
+              id="created-author"
+              type="text"
+              placeholder="insert author here"
+          /></label>
+          <button id="add-quote-action">Add</button>
+        </div>
+      </div>
+      <div id="more-options-modal" class="modal hidden">
         <header class="modal-header">
           <h5>myQuotes</h5>
           <h5 id="close-modal-btn">X</h5>
