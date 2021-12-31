@@ -1,5 +1,5 @@
 import { closeModal, modalBody } from "../moreOptionsModal.js";
-import { quoteSection, URL, getQuote } from "../../main.js";
+import { quoteSection, URL, getQuote, quote, author } from "../../main.js";
 
 const modalActionUpdateBody = document.querySelector(
   "#modal-action-update-body"
@@ -17,6 +17,8 @@ const closeModalCompletedActionUpdate = document.querySelector(
 export function showUpdateQuoteModal() {
   modalBody.classList.add("hidden");
   modalActionUpdateBody.classList.remove("hidden");
+  updateQuoteInputField.value = quote.innerText;
+  updateAuthorInputField.value = author.innerText;
   updateActionBtn.addEventListener("click", updateButtonClickHandler);
 }
 
