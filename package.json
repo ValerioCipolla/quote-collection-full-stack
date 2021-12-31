@@ -10,7 +10,8 @@
     "db-create": "node -r dotenv/config ./db/scripts/create-table.js",
     "db-drop": "node -r dotenv/config ./db/scripts/drop-table.js",
     "db-seed": "node -r dotenv/config ./db/scripts/seed-table.js",
-    "db-read": "node -r dotenv/config ./db/scripts/read-table.js"
+    "db-read": "node -r dotenv/config ./db/scripts/read-table.js",
+    "email-send": "node -r dotenv/config ./mailer.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -18,6 +19,7 @@
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "morgan": "~1.9.1",
+    "nodemailer": "^6.7.2",
     "pg": "^8.7.1"
   },
   "devDependencies": {
