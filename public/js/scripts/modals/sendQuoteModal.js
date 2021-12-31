@@ -1,4 +1,5 @@
 import { modalBody, closeModal } from "../moreOptionsModal.js";
+import { URL, quote, author } from "../../main.js";
 
 export const modalActionSendBody = document.querySelector(
   "#modal-action-send-body"
@@ -18,14 +19,25 @@ export function showSendQuoteModal() {
   sendActionBtn.addEventListener("click", sendButtonClickHandler);
 }
 
-export function sendButtonClickHandler() {
+export async function sendButtonClickHandler() {
   modalActionSendBody.classList.add("hidden");
   modalCompletedActionSendBody.classList.remove("hidden");
   closeModalCompletedActionSendBtn.addEventListener("click", closeModal);
-  emailInputField.value = "";
+  const requestOptions = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      recipient: emailInputField.value,
+      content: `${quote.innerText} by ${author.innerText}`,
+    }),
+  };
+  const response = await fetch(`${URL}/api/send`, requestOptions);
+  const data = await response.json();
+  console.log(data);
 }
 
 export function hideSendQuoteModal() {
   modalActionSendBody.classList.add("hidden");
   modalCompletedActionSendBody.classList.add("hidden");
+  emailInputField.value = "";
 }

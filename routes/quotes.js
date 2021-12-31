@@ -1,4 +1,6 @@
 import express from "express";
+import { transporter } from "../mailer.js";
+import { emailInfo } from "../config.js";
 import {
   getAllQuotes,
   getQuoteById,
@@ -116,6 +118,32 @@ router.get("/authors", async function (req, res) {
     success: true,
     message: "All authors found :)",
     payload: result,
+  });
+});
+
+// POST request for email
+
+router.post("/send", async function (req, res) {
+  const recipient = req.body.recipient;
+  const content = req.body.content;
+  const mailOptions = {
+    from: emailInfo.email_address,
+    to: recipient,
+    subject: "Your requested quote",
+    text: content,
+  };
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Email sent: " + info.response);
+    }
+  });
+
+  res.json({
+    success: true,
+    message: "email sent",
   });
 });
 
