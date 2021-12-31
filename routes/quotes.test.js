@@ -34,13 +34,49 @@ describe("checking post requests to /api/quotes", () => {
     await request(app)
       .post("/api/quotes")
       .send({
-        quote: "I love pizza",
+        quote: "this quote was created by a test",
         author: "Me",
       })
       .expect(function (res) {
         const expected = {
           success: true,
           message: "quote created :)",
+          payload: expect.any(Array),
+        };
+        const actual = res.body;
+        expect(actual).toStrictEqual(expected);
+      });
+  });
+});
+
+describe("checking update requests to /api/quotes/1", () => {
+  test("/api/quotes/1 should update the quote with id 1", async function () {
+    await request(app)
+      .put("/api/quotes/1")
+      .send({
+        quote: "this quote was updated by a test",
+        author: "Me",
+      })
+      .expect(function (res) {
+        const expected = {
+          success: true,
+          message: "quote with id 1 has been updated",
+          payload: expect.any(Array),
+        };
+        const actual = res.body;
+        expect(actual).toStrictEqual(expected);
+      });
+  });
+});
+
+describe("checking delete requests to /api/quotes/5", () => {
+  test("/api/quotes/5 should delete the quote with id 5", async function () {
+    await request(app)
+      .delete("/api/quotes/5")
+      .expect(function (res) {
+        const expected = {
+          success: true,
+          message: "quote with id 5 has been deleted",
           payload: expect.any(Array),
         };
         const actual = res.body;
