@@ -5,10 +5,32 @@ import {
   createQuote,
   deleteQuoteById,
   updateQuoteById,
+  getAllAuthors,
+  getQuoteByAuthor,
 } from "../models/quotes.js";
 const router = express.Router();
 
+// QUOTES routes url/api/quotes
+
 router.get("/quotes", async function (req, res) {
+  const author = req.query.author;
+  if (author) {
+    const result = await getQuoteByAuthor(author);
+    if (result.length > 0) {
+      res.json({
+        success: true,
+        message: `found quotes by '${author}'`,
+        payload: result,
+      });
+      return;
+    } else {
+      res.json({
+        success: false,
+        message: `cannot find quotes by '${author}'`,
+      });
+      return;
+    }
+  }
   const result = await getAllQuotes();
   if (result.length <= 0) {
     res.status(404).json({
@@ -82,6 +104,17 @@ router.put("/quotes/:id", async function (req, res) {
   res.json({
     success: true,
     message: `quote with id ${id} has been updated`,
+    payload: result,
+  });
+});
+
+//AUTHORS route url/api/authors
+
+router.get("/authors", async function (req, res) {
+  const result = await getAllAuthors();
+  res.json({
+    success: true,
+    message: "All authors found :)",
     payload: result,
   });
 });

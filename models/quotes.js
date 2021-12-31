@@ -10,6 +10,11 @@ export async function getQuoteById(id) {
   return data.rows;
 }
 
+export async function getQuoteByAuthor(author) {
+  const data = await query(`SELECT * FROM quotes WHERE author = $1`, [author]);
+  return data.rows;
+}
+
 export async function createQuote(quote) {
   const data = await query(
     `INSERT INTO quotes (quote, author) VALUES ($1, $2) RETURNING *;`,
@@ -30,5 +35,10 @@ export async function updateQuoteById(quote, id) {
     `UPDATE quotes SET quote = $1, author = $2 WHERE id = $3 RETURNING *`,
     [quote.quote, quote.author, id]
   );
+  return data.rows;
+}
+
+export async function getAllAuthors() {
+  const data = await query("SELECT DISTINCT author from quotes;");
   return data.rows;
 }
