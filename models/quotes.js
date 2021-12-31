@@ -10,7 +10,7 @@ export async function getQuoteById(id) {
   return data.rows;
 }
 
-export async function getQuoteByAuthor(author) {
+export async function getQuotesByAuthor(author) {
   const data = await query(`SELECT * FROM quotes WHERE author = $1`, [author]);
   return data.rows;
 }

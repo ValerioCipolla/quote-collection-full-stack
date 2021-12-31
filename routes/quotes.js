@@ -6,7 +6,7 @@ import {
   deleteQuoteById,
   updateQuoteById,
   getAllAuthors,
-  getQuoteByAuthor,
+  getQuotesByAuthor,
 } from "../models/quotes.js";
 const router = express.Router();
 
@@ -15,7 +15,7 @@ const router = express.Router();
 router.get("/quotes", async function (req, res) {
   const author = req.query.author;
   if (author) {
-    const result = await getQuoteByAuthor(author);
+    const result = await getQuotesByAuthor(author);
     if (result.length > 0) {
       res.json({
         success: true,
