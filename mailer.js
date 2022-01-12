@@ -11,18 +11,3 @@ export const transporter = nodemailer.createTransport({
     rejectUnauthorized: false,
   },
 });
-
-// export const mailOptions = {
-//   from: emailInfo.email_address,
-//   to: "valerio_cipolla@hotmail.it",
-//   subject: "Sending Email using Node.js",
-//   text: "That was easy!",
-// };
-
-// transporter.sendMail(mailOptions, function (error, info) {
-//   if (error) {
-//     console.log(error);
-//   } else {
-//     console.log("Email sent: " + info.response);
-//   }
-// });
