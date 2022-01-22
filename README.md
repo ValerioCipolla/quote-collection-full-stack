@@ -2,8 +2,24 @@
 
 # quote-collection-full-stack
 
-A full-stack quote collection application made using JavaScript, HTML and CSS for the front-end. Node.js and PostegreSQL for the back-end.
+A full-stack quote collection application.
 This application allows users to add their favourite quotes to a database, read through the quotes added by other users, and/or email the quotes to whoever they like!
+
+## Tech Stack
+
+Back-end:
+*Node.js
+*postgreSQL
+
+Front-end:
+*Vanilla JS
+*CSS
+\*HTML
+
+Testing:
+\*Jest
+
+Deployed using Heroku.
 
 # Project Diary
 
