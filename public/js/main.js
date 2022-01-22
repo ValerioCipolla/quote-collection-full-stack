@@ -2,7 +2,7 @@ import switchMode from "./scripts/switchMode.js";
 import { showModal } from "./scripts/moreOptionsModal.js";
 import { showAddQuoteModal } from "./scripts/modals/addQuoteModal.js";
 
-export const URL = "http://localhost:3000";
+export const URL = "";
 export const quoteSection = document.querySelector("#quote-section");
 export const quote = document.querySelector("#quote");
 export const author = document.querySelector("#author");
