@@ -24,6 +24,12 @@ Testing:
 
 Deployed using Heroku.
 
+## Code snippet I am proud of
+
+Here I use Jest to test a request made to my server that should return all quotes. In my testing I also make sure that each object of the array that is returned has the right structure.
+
+![code snippet](.images/carbon.png)
+
 # Project Diary
 
 ### Day 1
