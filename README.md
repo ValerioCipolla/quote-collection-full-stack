@@ -1,4 +1,5 @@
 ![myQuotes banner](./images/myQuotes.png)
+
 checkout the app --> [myQuotesCollection](https://quote-generator-full-stack.herokuapp.com/)
 
 # quote-collection-full-stack
