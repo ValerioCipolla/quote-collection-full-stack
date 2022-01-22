@@ -8,16 +8,19 @@ This application allows users to add their favourite quotes to a database, read 
 ## Tech Stack
 
 Back-end:
-*Node.js
-*postgreSQL
+
+- Node.js
+- postgreSQL
 
 Front-end:
-*Vanilla JS
-*CSS
-\*HTML
+
+- Vanilla JS
+- CSS
+- HTML
 
 Testing:
-\*Jest
+
+- Jest
 
 Deployed using Heroku.
 
