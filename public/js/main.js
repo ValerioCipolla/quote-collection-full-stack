@@ -10,6 +10,7 @@ export const nextQuoteButton = document.querySelector("#next-quote-btn");
 export const switchModeButton = document.querySelector("#switch-mode-btn");
 export const moreOptionBtn = document.querySelector("#more-options-btn");
 export const addQuoteBtn = document.querySelector("#add-quote-btn");
+export const downloadPDFBtn = document.querySelector("#download-pdf-btn");
 
 let index = 0;
 
@@ -36,9 +37,29 @@ async function nextQuoteButtonClickHandler() {
   getQuote();
 }
 
+async function generatePDF() {
+  const requestOptions = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      quote: quote.innerText,
+      author: author.innerText,
+    }),
+  };
+  const response = await fetch(`${URL}/api/pdf`, requestOptions);
+  const data = await response.json();
+  console.log(data.payload);
+  let win = window.open("", "myWindow");
+  win.document.write(
+    "<html><head><title>jsPDF</title></head><body><embed src=" +
+      data +
+      "></embed></body></html>"
+  );
+}
+
 nextQuoteButton.addEventListener("click", nextQuoteButtonClickHandler);
 addQuoteBtn.addEventListener("click", showAddQuoteModal);
 switchModeButton.addEventListener("click", switchMode);
 moreOptionBtn.addEventListener("click", showModal);
-
+downloadPDFBtn.addEventListener("click", generatePDF);
 getQuote();

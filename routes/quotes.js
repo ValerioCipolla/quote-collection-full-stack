@@ -1,6 +1,7 @@
 import express from "express";
 import { transporter } from "../mailer.js";
 import { emailInfo } from "../config.js";
+import { jsPDF } from "jspdf";
 import {
   getAllQuotes,
   getQuoteById,
@@ -147,4 +148,17 @@ router.post("/send", async function (req, res) {
   });
 });
 
+// POST REQUEST FOR PDF
+
+router.post("/pdf", async function (req, res) {
+  let doc = new jsPDF();
+
+  doc.text(20, 20, "Hello world!");
+  doc.text(20, 30, "This is client-side Javascript to generate a PDF.");
+
+  res.json({
+    success: true,
+    payload: doc.output("datauristring"),
+  });
+});
 export default router;
