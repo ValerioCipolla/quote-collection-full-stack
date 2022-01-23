@@ -48,13 +48,11 @@ async function generatePDF() {
   };
   const response = await fetch(`${URL}/api/pdf`, requestOptions);
   const data = await response.json();
-  console.log(data.payload);
-  let win = window.open("", "myWindow");
-  win.document.write(
-    "<html><head><title>jsPDF</title></head><body><embed src=" +
-      data +
-      "></embed></body></html>"
-  );
+  openPDF(data.payload);
+}
+
+function openPDF(string) {
+  window.open(string);
 }
 
 nextQuoteButton.addEventListener("click", nextQuoteButtonClickHandler);

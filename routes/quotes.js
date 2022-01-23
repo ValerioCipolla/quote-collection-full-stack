@@ -152,13 +152,17 @@ router.post("/send", async function (req, res) {
 
 router.post("/pdf", async function (req, res) {
   let doc = new jsPDF();
+  const quote = doc.splitTextToSize(req.body.quote, 180);
+  const author = req.body.author;
+  console.log(quote);
 
-  doc.text(20, 20, "Hello world!");
-  doc.text(20, 30, "This is client-side Javascript to generate a PDF.");
+  doc.text(20, 20, quote);
+  doc.text(20, 20 + quote.length * 20, author);
+  let pdf = doc.output("datauristring");
 
   res.json({
     success: true,
-    payload: doc.output("datauristring"),
+    payload: pdf,
   });
 });
 export default router;
